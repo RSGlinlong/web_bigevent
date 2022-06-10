@@ -58,7 +58,7 @@ $(function() {
                 // 登录验证成功 跳转至首页
                 setTimeout(function() {
                     location.href = '/index.html'
-                }, 750)
+                }, 800)
 
             }
         })
