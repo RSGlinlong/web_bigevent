@@ -7,7 +7,7 @@ $.ajaxPrefilter(function(options) {
         options.headers = { Authorization: localStorage.getItem('token') || '' }
     }
 
-    // 全局统一挂载 complete韩束
+    // 全局统一挂载 complete函数
     options.complete = function(res) {
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 清除token
