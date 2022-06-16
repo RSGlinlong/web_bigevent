@@ -40,7 +40,7 @@ function getUserinfo() {
 // 渲染用户信息及头像
 function renderAvatar(user) {
     // 获取用户名称
-    let name = user.nikename || user.username
+    let name = user.nickname || user.username
         // 渲染用户名
     $('#username').html(name);
 

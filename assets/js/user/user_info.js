@@ -32,6 +32,7 @@ $(function() {
                     return layer.msg('更新用户信息失败', { icon: 5 })
                 }
                 layer.msg('更新用户信息成功', { icon: 6 })
+                window.parent.getUserinfo()
             }
         });
     })

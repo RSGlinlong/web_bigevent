@@ -30,7 +30,7 @@ body {
 }
 
 .loginAndRegBox .reg-box {
-    display: block;
+    display: none;
 }
 
 
