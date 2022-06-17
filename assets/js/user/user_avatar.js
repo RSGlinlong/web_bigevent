@@ -1,8 +1,8 @@
 var layer = layui.layer
+    // 1.1 获取裁剪区域的 DOM 元素
 var $image = $('#image')
 $(function() {
-    // 1.1 获取裁剪区域的 DOM 元素
-
+    // 初始化图片url
     // 1.2 配置选项
     const options = {
         // 纵横比
@@ -57,3 +57,14 @@ $(function() {
     })
 
 })
+
+// 初始化图片
+function getUserinfo() {
+    $.ajax({
+        type: "GET",
+        url: "/my/userinfo",
+        success: function(res) {
+            $image.attr('src', res.data.user_pic)
+        }
+    })
+}
