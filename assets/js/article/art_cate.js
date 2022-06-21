@@ -34,10 +34,15 @@ $(function() {
             data: $(this).serialize(),
             success: function(res) {
                 if (res.status !== 0) {
-                    return layer.msg('新增文章分类失败', { icon: 5 })
+                    return layer.msg('新增文章分类失败', {
+                        icon: 5
+                    })
                 }
-                layer.msg('新增文章分类成功', { icon: 6 })
+                layer.msg('新增文章分类成功', {
+                    icon: 6
+                })
                 layer.close(indexAdd)
+                initArtCateList()
             }
         });
     });
@@ -71,9 +76,13 @@ $(function() {
             data: $(this).serialize(),
             success: function(res) {
                 if (res.status !== 0) {
-                    return layer.msg(res.message, { icon: 5 })
+                    return layer.msg(res.message, {
+                        icon: 5
+                    })
                 }
-                layer.msg(res.message, { icon: 6 })
+                layer.msg(res.message, {
+                    icon: 6
+                })
                 layer.close(indexEdit)
                 initArtCateList()
             }
@@ -83,16 +92,23 @@ $(function() {
     // 删除分类
     $('#tbody').on('click', '.btn-delete', function() {
         var id = $(this).attr('data-id')
-        layer.confirm('确定删除?', { icon: 3, title: '提示' }, function(index) {
+        layer.confirm('确定删除?', {
+            icon: 3,
+            title: '提示'
+        }, function(index) {
 
             $.ajax({
                 type: "GET",
                 url: "/my/article/deletecate/" + id,
                 success: function(res) {
                     if (res.status !== 0) {
-                        return layer.msg(res.message, { icon: 5 })
+                        return layer.msg(res.message, {
+                            icon: 5
+                        })
                     }
-                    layer.msg(res.message, { icon: 6 })
+                    layer.msg(res.message, {
+                        icon: 6
+                    })
                     layer.close(index);
                     initArtCateList()
                 }
